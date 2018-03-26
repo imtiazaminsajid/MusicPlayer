@@ -1,9 +1,85 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.imtiazaminsajid.musicplayer.Player">
 
-</android.support.constraint.ConstraintLayout>
+
+    <SeekBar
+        android:id="@+id/seekBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="104dp"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="170dp"
+        tools:layout_editor_absoluteY="50dp" />
+
+    <Button
+        android:id="@+id/forwordBT"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/seekBar"
+        android:layout_marginTop="166dp"
+        android:background="#c68181"
+        tools:ignore="HardcodedText,MissingConstraints"
+        tools:layout_editor_absoluteX="7dp"
+        tools:layout_editor_absoluteY="110dp" />
+
+    <Button
+        android:id="@+id/fastBackwordBT"
+        android:layout_width="70dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/forwordBT"
+        android:layout_alignBottom="@+id/forwordBT"
+        android:layout_toEndOf="@+id/forwordBT"
+        android:layout_toRightOf="@+id/forwordBT"
+        android:background="#2c97c9"
+        tools:ignore="HardcodedText,MissingConstraints"
+        tools:layout_editor_absoluteX="62dp"
+        tools:layout_editor_absoluteY="110dp" />
+
+    <Button
+        android:id="@+id/fastForwordBT"
+        android:layout_width="70dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/nextBT"
+        android:layout_alignBottom="@+id/nextBT"
+        android:layout_toLeftOf="@+id/nextBT"
+        android:layout_toStartOf="@+id/nextBT"
+        android:background="#2c97c9"
+        tools:ignore="HardcodedText,MissingConstraints"
+        tools:layout_editor_absoluteX="258dp"
+        tools:layout_editor_absoluteY="110dp" />
+
+    <Button
+        android:id="@+id/nextBT"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/playBT"
+        android:layout_alignBottom="@+id/playBT"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:background="#c68181"
+        tools:ignore="HardcodedText,MissingConstraints"
+        tools:layout_editor_absoluteX="334dp"
+        tools:layout_editor_absoluteY="110dp" />
+
+    <Button
+        android:id="@+id/playBT"
+        android:layout_width="105dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/fastBackwordBT"
+        android:layout_alignBottom="@+id/fastBackwordBT"
+        android:layout_centerHorizontal="true"
+        android:background="#88ab6c"
+        tools:ignore="HardcodedText,MissingConstraints"
+        tools:layout_editor_absoluteX="153dp"
+        tools:layout_editor_absoluteY="120dp" />
+</RelativeLayout>
