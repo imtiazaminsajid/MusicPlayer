@@ -1,5 +1,6 @@
 package com.example.imtiazaminsajid.musicplayer;
 
+import android.content.Intent;
 import android.os.Environment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -37,6 +38,8 @@ public class MainActivity extends AppCompatActivity {
         playListLV.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
+                startActivity(new Intent(MainActivity.this, Player.class).putExtra("position", position).putExtra("mySongs", mySongs));
+
 
             }
         });
