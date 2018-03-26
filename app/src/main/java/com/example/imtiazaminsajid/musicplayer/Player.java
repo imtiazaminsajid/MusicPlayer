@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.SeekBar;
+import android.widget.TextView;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -20,6 +21,7 @@ public class Player extends AppCompatActivity implements View.OnClickListener {
     Thread updateSeekBar;
 
     SeekBar seekBar;
+    TextView nowplaying;
     Button pause,next,previous,fastForword,backForword;
 
     @Override
@@ -28,6 +30,7 @@ public class Player extends AppCompatActivity implements View.OnClickListener {
         setContentView(R.layout.activity_player);
 
         seekBar = findViewById(R.id.seekBar);
+        nowplaying = findViewById(R.id.nowPlaying);
 
         pause = findViewById(R.id.playBT);
         next = findViewById(R.id.nextBT);
@@ -46,6 +49,8 @@ public class Player extends AppCompatActivity implements View.OnClickListener {
         previous.setOnClickListener(this);
         fastForword.setOnClickListener(this);
         backForword.setOnClickListener(this);
+
+
 
         updateSeekBar = new Thread(){
             @Override
@@ -78,6 +83,7 @@ public class Player extends AppCompatActivity implements View.OnClickListener {
         uri = Uri.parse(mySongs.get(position).toString());
         mediaPlayer = MediaPlayer.create(getApplicationContext() , uri);
         mediaPlayer.start();
+        nowplaying.setText("Now Playing : "+mySongs.get(position).toString());
         seekBar.setMax(mediaPlayer.getDuration());
         updateSeekBar.start();
 
@@ -132,6 +138,7 @@ public class Player extends AppCompatActivity implements View.OnClickListener {
                 uri = Uri.parse(mySongs.get(position).toString());
                 mediaPlayer = MediaPlayer.create(getApplicationContext() , uri);
                 mediaPlayer.start();
+                nowplaying.setText("Now Playing : "+mySongs.get(position).toString());
                 seekBar.setMax(mediaPlayer.getDuration());
                 break;
 
@@ -142,6 +149,7 @@ public class Player extends AppCompatActivity implements View.OnClickListener {
                 uri = Uri.parse(mySongs.get(position).toString());
                 mediaPlayer = MediaPlayer.create(getApplicationContext() , uri);
                 mediaPlayer.start();
+                nowplaying.setText("Now Playing : "+mySongs.get(position).toString());
                 break;
 
         }
