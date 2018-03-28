@@ -41,8 +41,8 @@ public class Player extends AppCompatActivity implements View.OnClickListener {
         pause.setText("||");
         next.setText(">|");
         previous.setText("|<");
-        fastForword.setText(">>");
-        backForword.setText("<<");
+        fastForword.setText(">> ");
+        backForword.setText(" <<");
 
         pause.setOnClickListener(this);
         next.setOnClickListener(this);
